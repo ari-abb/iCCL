@@ -30,6 +30,16 @@ iCCL <- function(SeuratObject, min.dim, max.dim, name = "iCCL",
   reduction <- match.arg(reduction)
   stopifnot(min.dim >= 3, max.dim >= min.dim)
 
+  if (!"pca" %in% names(SeuratObject@reductions)) {
+    stop("No 'pca' reduction found. Run Seurat::RunPCA() on the object first.")
+  }
+  npcs <- ncol(Seurat::Embeddings(SeuratObject, "pca"))
+  if (max.dim > npcs) {
+    stop(sprintf(paste0("max.dim (%d) exceeds the %d principal components available ",
+                        "in the object. Lower max.dim or recompute PCA with more npcs."),
+                 max.dim, npcs))
+  }
+
   reductions <- switch(reduction,
                        umap = "umap",
                        tsne = "tsne",

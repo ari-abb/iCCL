@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220" role="img" aria-label="iCCL hex logo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12233f"/>
+      <stop offset="1" stop-color="#1d3557"/>
+    </linearGradient>
+    <clipPath id="hex">
+      <polygon points="100,10 186.6,60 186.6,160 100,210 13.4,160 13.4,60"/>
+    </clipPath>
+  </defs>
+
+  <!-- hex body -->
+  <polygon points="100,10 186.6,60 186.6,160 100,210 13.4,160 13.4,60"
+           fill="url(#bg)" stroke="#a8dadc" stroke-width="6"/>
+
+  <!-- UMAP-like cluster scatter, clipped to the hex -->
+  <g clip-path="url(#hex)" opacity="0.92">
+    <!-- cluster A (red) -->
+    <g fill="#e63946">
+      <circle cx="58" cy="62" r="4.5"/><circle cx="70" cy="58" r="4.5"/>
+      <circle cx="64" cy="74" r="4.5"/><circle cx="74" cy="70" r="4.5"/>
+      <circle cx="55" cy="72" r="4.5"/><circle cx="68" cy="66" r="4.5"/>
+      <circle cx="60" cy="53" r="4.5"/>
+    </g>
+    <!-- cluster B (teal) -->
+    <g fill="#2a9d8f">
+      <circle cx="128" cy="64" r="4.5"/><circle cx="140" cy="60" r="4.5"/>
+      <circle cx="134" cy="76" r="4.5"/><circle cx="145" cy="72" r="4.5"/>
+      <circle cx="126" cy="74" r="4.5"/><circle cx="138" cy="68" r="4.5"/>
+      <circle cx="147" cy="63" r="4.5"/>
+    </g>
+    <!-- cluster C (gold) -->
+    <g fill="#f4a261">
+      <circle cx="60" cy="150" r="4.5"/><circle cx="72" cy="146" r="4.5"/>
+      <circle cx="66" cy="162" r="4.5"/><circle cx="76" cy="156" r="4.5"/>
+      <circle cx="57" cy="160" r="4.5"/><circle cx="70" cy="154" r="4.5"/>
+      <circle cx="62" cy="140" r="4.5"/>
+    </g>
+    <!-- cluster D (light blue) -->
+    <g fill="#7fb3d5">
+      <circle cx="130" cy="152" r="4.5"/><circle cx="142" cy="148" r="4.5"/>
+      <circle cx="136" cy="164" r="4.5"/><circle cx="147" cy="158" r="4.5"/>
+      <circle cx="128" cy="160" r="4.5"/><circle cx="140" cy="154" r="4.5"/>
+      <circle cx="149" cy="147" r="4.5"/>
+    </g>
+  </g>
+
+  <!-- wordmark -->
+  <text x="100" y="122" text-anchor="middle"
+        font-family="Helvetica, Arial, sans-serif" font-size="52" font-weight="700"
+        fill="#f1faee" letter-spacing="1">iCCL</text>
+  <text x="100" y="140" text-anchor="middle"
+        font-family="Helvetica, Arial, sans-serif" font-size="11.5" font-weight="500"
+        fill="#a8dadc" letter-spacing="3">FOR SEURAT</text>
+</svg>

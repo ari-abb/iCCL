@@ -1,7 +1,21 @@
-# iCCL1 — objective PCA dimensionality & comparative clustering for Seurat
+<p align="center">
+  <img src="man/figures/logo.svg" alt="iCCL1 logo" width="185"/>
+</p>
 
-> **i**nteractive **C**omparative **C**lustering **L**oop
->
+<h1 align="center">iCCL1</h1>
+
+<p align="center">
+  <b>interactive Comparative Clustering Loop</b><br/>
+  <i>Objective PCA dimensionality &amp; comparative clustering for Seurat</i>
+</p>
+
+<p align="center">
+  <a href="https://github.com/ari-abb/iCCL1/actions/workflows/R-CMD-check.yaml"><img src="https://github.com/ari-abb/iCCL1/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check status"/></a>
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"/>
+  <img src="https://img.shields.io/badge/Seurat-4%20%7C%205-1d3557.svg" alt="Works with Seurat 4 and 5"/>
+  <img src="https://img.shields.io/badge/lifecycle-maturing-4c9a2a.svg" alt="Lifecycle: maturing"/>
+</p>
+
 > Stop guessing how many principal components to keep, and stop clustering at a
 > single arbitrary resolution. `iCCL1` gives you an **objective, reproducible**
 > estimate of the dimensionality (`predictdimension()`), then **sweeps** the
@@ -125,9 +139,9 @@ install.packages("Seurat")
 
 # 2. iCCL1 from GitHub
 if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
-remotes::install_github("ari7cr/iCCL1")
+remotes::install_github("ari-abb/iCCL1")
 
-# (devtools::install_github("ari7cr/iCCL1") works too)
+# (devtools::install_github("ari-abb/iCCL1") works too)
 library(iCCL1)
 ```
 
@@ -366,6 +380,6 @@ If `iCCL1` is useful in your work, please also cite Seurat.
 
 Developed by **Arian Abbasi** (abbasi@hhu.de) as part of a BSc thesis, University
 of Cologne. Contributions and ideas are very much appreciated — open an
-[issue](https://github.com/ari7cr/iCCL1/issues) or PR.
+[issue](https://github.com/ari-abb/iCCL1/issues) or PR.
 
 *License: MIT.*
