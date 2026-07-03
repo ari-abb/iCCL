@@ -1,4 +1,4 @@
-Package: iCCL1
+Package: iCCL
 Type: Package
 Title: Objective PCA Dimensionality and Comparative Clustering for Seurat
 Version: 0.2.0

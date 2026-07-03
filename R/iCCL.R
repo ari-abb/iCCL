@@ -1,4 +1,4 @@
-#' iCCL1: interactive Comparative Clustering Loop
+#' iCCL: interactive Comparative Clustering Loop
 #'
 #' Objective PCA dimensionality estimation and multi-dimension / multi-resolution
 #' Seurat clustering with UMAP and t-SNE embeddings.

@@ -21,7 +21,7 @@ set.seed(42)
 
 # --- load the fixed iCCL functions directly (no build/install needed) ------
 # Run this script from the validation/ directory.
-pkg_dir <- "../iCCL1/R"
+pkg_dir <- "../R"
 source(file.path(pkg_dir, "predict.R"))
 source(file.path(pkg_dir, "clusterloop_v1.R"))
 

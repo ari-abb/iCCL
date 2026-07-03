@@ -1,4 +1,4 @@
 library(testthat)
-library(iCCL1)
+library(iCCL)
 
-test_check("iCCL1")
+test_check("iCCL")
