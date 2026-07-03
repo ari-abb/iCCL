@@ -2,19 +2,28 @@
 % Please edit documentation in R/predict.R
 \name{predictdimension}
 \alias{predictdimension}
-\title{Title}
+\title{predictdimension: quantitative PCA dimensionality estimate}
 \usage{
-predictdimension(SeuratObject)
+predictdimension(SeuratObject, plot = TRUE)
 }
 \arguments{
-\item{SeuratObject}{}
+\item{SeuratObject}{A Seurat object that has already been through \code{RunPCA()}.}
+
+\item{plot}{Logical; if \code{TRUE} (default) draw the annotated diagnostic plot.}
 }
 \value{
-
+(invisibly) the estimated number of PCs, as an integer.
 }
 \description{
-Title
+Estimates how many principal components to use for downstream clustering, as
+an objective, reproducible alternative to reading a Seurat \code{ElbowPlot()}
+by eye. Ports the heuristic from the Harvard Chan Bioinformatics Core: take
+the minimum of (1) the first PC whose cumulative variation exceeds 90 percent
+while contributing less than 5 percent individually, and (2) the last PC where
+the drop in variation relative to the next PC still exceeds 0.1 percent.
 }
 \examples{
-predictdimension(Macs)
+\dontrun{
+pcs <- predictdimension(Macs)
+}
 }

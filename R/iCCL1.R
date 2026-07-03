@@ -1,10 +1,9 @@
-#' iCCL Package
+#' iCCL1: interactive Comparative Clustering Loop
 #'
-#' Prints clusters for a dimension range
-#'
-#' @docType package
+#' Objective PCA dimensionality estimation and multi-dimension / multi-resolution
+#' Seurat clustering with UMAP and t-SNE embeddings.
 #'
 #' @author Arian Abbasi \email{abbasi@hhu.de}
 #'
-#' @name iCCL1
-NULL
+#' @keywords internal
+"_PACKAGE"

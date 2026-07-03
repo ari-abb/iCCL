@@ -2,3 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# renv: keep lockfile + activate script, ignore the local library
+renv/library/
+renv/staging/
+renv/local/
+renv/cellar/

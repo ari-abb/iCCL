@@ -1,2 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^validation$
+^renv$
+^renv\.lock$
+^\.github$

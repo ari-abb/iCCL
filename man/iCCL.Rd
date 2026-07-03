@@ -2,23 +2,46 @@
 % Please edit documentation in R/clusterloop_v1.R
 \name{iCCL}
 \alias{iCCL}
-\title{iCCL1}
+\title{iCCL: interactive Comparative Clustering Loop}
 \usage{
-iCCL(SeuratObject, min.dim, max.dim)
+iCCL(
+  SeuratObject,
+  min.dim,
+  max.dim,
+  name = "iCCL",
+  resolutions = c(0.25, 0.5, 0.75, 1),
+  reduction = c("umap", "tsne", "both")
+)
 }
 \arguments{
-\item{SeuratObject}{your Seurat Objeect}
+\item{SeuratObject}{A Seurat object that has already been through \code{RunPCA()}.}
 
-\item{min.dim}{minimum dimension}
+\item{min.dim}{Minimum number of PCs to cluster on (must be >= 3).}
 
-\item{max.dim}{maximum dimenson}
+\item{max.dim}{Maximum number of PCs to cluster on (must be >= min.dim).}
+
+\item{name}{Character label used for the output sub-directory and plot titles.}
+
+\item{resolutions}{Numeric vector of clustering resolutions to sweep.}
+
+\item{reduction}{Embedding(s) to compute for plotting: "umap", "tsne", or "both".}
 }
 \value{
-cluster plots for dimesnion range between min.dim and max.dim
+(invisibly) the path to the directory containing the saved plots.
 }
 \description{
-iCCL1
+Runs Seurat clustering across a range of PCA dimensions and a set of
+resolutions, saving one dimensionality-reduction plot per combination so the
+results can be compared side by side. Intended to be used after
+\code{\link{predictdimension}} has suggested a starting dimensionality.
+}
+\details{
+The embedding (UMAP and/or t-SNE) depends only on the number of dimensions,
+so it is computed once per dimension and re-used across resolutions rather
+than being recomputed for every resolution.
 }
 \examples{
-iCCL(mySeuratObject, 20, 25)
+\dontrun{
+iCCL(mySeuratObject, 20, 23, name = "Macs", reduction = "both")
+}
 }
