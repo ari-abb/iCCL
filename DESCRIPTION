@@ -10,8 +10,8 @@ Description: A small companion to the Seurat single-cell RNA-seq workflow. It
     and resolutions, saving one UMAP and/or t-SNE plot per combination so the
     biologically most sensible clustering can be chosen by comparison (iCCL).
 License: MIT + file LICENSE
-URL: https://github.com/ari-abb/iCCL1
-BugReports: https://github.com/ari-abb/iCCL1/issues
+URL: https://github.com/ari-abb/iCCL
+BugReports: https://github.com/ari-abb/iCCL/issues
 Encoding: UTF-8
 Depends:
     R (>= 3.6)
