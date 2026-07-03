@@ -27,6 +27,11 @@
 [Seurat](https://satijalab.org/seurat/). It changes *nothing* about Seurat's
 maths - it removes two sources of guesswork from the workflow.
 
+<p align="center">
+  <img src="man/figures/example_teaser.png" width="620" alt="iCCL teaser: UMAP clusterings across PC dimensions and resolutions"/><br/>
+  <sub><i>One command turns a dataset into a comparison grid of clusterings across PC dimensions (rows) and resolutions (columns), as UMAP and t-SNE. See <a href="#example-output">Example output</a>.</i></sub>
+</p>
+
 ---
 
 ## Contents
@@ -36,6 +41,7 @@ maths - it removes two sources of guesswork from the workflow.
 - [The core idea: dimensions are objective, resolution is biological](#the-core-idea-dimensions-are-objective-resolution-is-biological)
 - [Installation](#installation)
 - [Quick start](#quick-start)
+- [Functions at a glance](#functions-at-a-glance)
 - [Full worked example (UMAP **and** t-SNE)](#full-worked-example-umap-and-t-sne)
 - [Example output](#example-output)
 - [Function reference](#function-reference)
@@ -164,6 +170,21 @@ iCCL(obj, min.dim = pcs - 1, max.dim = pcs + 2,   # sweep a small window
 #    that best match the biology, then apply them in one call:
 obj <- clusterselect(obj, dims = 9, resolution = 0.8, reduction = "both")
 ```
+
+---
+
+## Functions at a glance
+
+Three functions, one per step of the workflow:
+
+| function | what it does |
+|---|---|
+| `predictdimension(obj)` | Objective estimate of how many PCs to use, replacing the eyeballed elbow plot. Returns the number (and draws the diagnostic). |
+| `iCCL(obj, min.dim, max.dim, ...)` | Sweeps clustering across a range of PC dimensions x resolutions and saves one UMAP and/or t-SNE plot per combination for comparison. |
+| `clusterselect(obj, dims, resolution, ...)` | Applies the dimensions + resolution you chose and returns the object with clusters and embedding(s) stored on it. |
+
+Intended flow: **`predictdimension()` -> `iCCL()` -> `clusterselect()`**. Full
+signatures and options are in the [Function reference](#function-reference).
 
 ---
 
