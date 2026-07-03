@@ -265,6 +265,11 @@ it takes the **minimum** of
 number of PCs (invisibly, as an integer - so it is pipeable), and by default
 draws the annotated diagnostic plot (kept PCs vs discarded PCs colour-coded).
 
+> Note: the heuristic normalises variance over the PCs present in the object, so
+> the estimate depends slightly on how many were computed. Keep a consistent
+> `npcs` (Seurat's default is `RunPCA(npcs = 50)`); on PBMC3k at that default it
+> returns 9.
+
 ```r
 pcs <- predictdimension(obj)            # plot + return
 pcs <- predictdimension(obj, plot = FALSE)   # just the number
